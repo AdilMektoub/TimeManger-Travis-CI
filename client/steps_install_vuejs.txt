@@ -1,0 +1,27 @@
+### Installation de NodeJS
+
+cd clients
+
+apt-get install nodejs -o
+
+apt install npm -o
+
+npm install vue
+
+npm install @vue/cli-service
+
+npm install raphael
+
+npm install vue-morris
+
+npm install vue-router
+
+npm install axios
+
+npm install js-sha256
+
+npm install vue-notification
+
+npm install vue-burger-menu
+
+npm run serve

@@ -1,0 +1,59 @@
+version: '3.6'
+services:
+
+###########################  VUEJS  #########################
+  vuejs:
+    build:
+      context: ./client/
+    volumes:
+      - './client/:/app'
+    ports:
+      - '8080:8080'
+    depends_on:
+      - phoenix
+    container_name: vuejs
+    networks:
+      - frontback
+
+##########################  DB #############################
+  db:
+    environment:
+      PGDATA: /var/lib/postgresql/data/pgdata
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_HOST_AUTH_METHOD: trust
+    image: 'postgres:11-alpine'
+    restart: always
+    volumes:
+      - 'pgdata:/var/lib/postgresql/data'
+    container_name: db
+    networks:
+      - backdb
+
+###########################  PHOENIX  #########################
+  phoenix:
+    build: ./server
+    depends_on:
+      - db
+    networks:
+      - frontback
+      - backdb
+    container_name: phoenix
+    environment:
+      MIX_ENV: dev
+    env_file:
+      - ./server/.env
+    ports:
+      - '4000:4000'
+    volumes:
+      - './server:/app'
+
+###########################  volume/networks  #########################
+volumes:
+  pgdata:
+
+networks:
+  backdb:
+    driver: bridge
+  frontback:
+    driver: bridge

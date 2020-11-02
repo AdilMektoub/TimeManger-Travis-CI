@@ -1,0 +1,22 @@
+FROM elixir:latest
+
+WORKDIR /app
+
+COPY mix.exs .
+COPY mix.lock .
+
+RUN wget https://packages.erlang-solutions.com/erlang-solutions_2.0_all.deb && dpkg -i erlang-solutions_2.0_all.deb
+RUN apt-get update -y
+RUN apt-get install esl-erlang -y
+RUN apt-get install build-essential
+
+#PHOENIX
+RUN mix local.hex --force -y
+RUN mix archive.install hex phx_new 1.5.6
+
+#DEPENDANCES PHOENIX
+RUN mix deps.get
+RUN mix local.rebar --force -y
+EXPOSE 4000
+
+CMD mix do ecto.create, ecto.migrate, phx.server

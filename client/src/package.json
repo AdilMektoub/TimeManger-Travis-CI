@@ -1,0 +1,16 @@
+{
+    "name": "docker_web_frontend",
+    "version": "1.0.0",
+    "description": "Node.js on Docker",
+    "author": "Anthony/Liam/Mickael/Adil <adil.mektoub@epitech.eu>",
+    "main": "server.js",
+    "scripts": {
+      "start": "node server.js"
+    },
+    "dependencies": {
+      "express": "^4.16.1",
+      "axios":"^3.1.2",
+      "vue-morris": "^1.1.0",
+      "Raphael": "^2.3.0"
+    }
+  }

@@ -1,0 +1,62 @@
+### Installation de Erlang
+
+sudo wget https://packages.erlang-solutions.com/erlang-solutions_2.0_all.deb && sudo dpkg -i erlang-solutions_2.0_all.deb
+
+sudo apt-get update
+
+sudo apt-get install esl-erlang -o
+
+
+
+### Installation d'elixir
+
+sudo apt-get install elixir
+
+
+
+### Installation de phoenix
+
+sudo mix local.hex -y
+
+sudo mix archive.install hex phx_new 1.5.6 -y
+
+
+### Installation de Postgresql
+
+ sudo apt install postgresql -o
+ 
+ [CHANGEMENT DU MOT DE PASSE SI BESOIN]
+ 
+ su postgres
+ 
+ psql
+ 
+ ALTER USER postgres PASSWORD 'liamdu06';
+ 
+ exit
+ 
+ exit
+ 
+ [FIN DU CHANGEMENT DE MOT DE PASSE]
+ 
+ 
+ 
+ ### Récupération du repository
+ 
+ git clone https://github.com/Namachi06/TimeManager2.git
+ 
+ cd TimeManager2/
+ 
+ cd server
+ 
+ apt-get install make -y
+ 
+ mix ecto.drop
+ 
+ mix ecto.create
+ 
+ mix ecto.migrate
+ 
+ mix deps.get
+ 
+ mix phx.server

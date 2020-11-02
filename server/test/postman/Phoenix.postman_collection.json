@@ -1,0 +1,569 @@
+{
+	"info": {
+		"_postman_id": "943fb98d-7bc6-4829-9e28-554d07eddfd5",
+		"name": "Phoenix",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user\": {\n        \"email\": \"liam@epitech.eu\",\n        \"username\": \"Liam\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/users",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/users/{{user_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"{{user_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/users/all",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User By Param",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/users?email=alex@epitech.eu&username=Alex",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "alex@epitech.eu"
+								},
+								{
+									"key": "username",
+									"value": "Alex"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user\": {\n        \"username\": \"Namachi\",\n        \"email\": \"namachi@epitech.eu\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/users/{{user_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"{{user_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/users/{{user_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"{{user_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "9d9e6739-33a9-4b99-8146-a91a6ef0b26a",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "8f005c68-97ba-4afd-a351-58db7a1091d0",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Working Times",
+			"item": [
+				{
+					"name": "Create Working time",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"working_time\": {\n        \"start\": \"2020-05-11 09:00:00\",\n        \"end\": \"2020-05-11 19:00:00\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/workingtimes/{{user_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"workingtimes",
+								"{{user_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Working Times",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/workingtimes/all",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"workingtimes",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Working Time By Param",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/workingtimes/{{user_id}}?start=2020-04-08T00:00:00&end=2020-04-08T20:00:00",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"workingtimes",
+								"{{user_id}}"
+							],
+							"query": [
+								{
+									"key": "start",
+									"value": "2020-04-08T00:00:00"
+								},
+								{
+									"key": "end",
+									"value": "2020-04-08T20:00:00"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Working Time",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/workingtimes/{{user_id}}/{{workingtime_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"workingtimes",
+								"{{user_id}}",
+								"{{workingtime_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Working Time",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"working_time\": {\n        \"start\": \"2020-05-11 09:00:00\",\n        \"end\": \"2020-05-11 19:00:00\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/workingtimes/{{workingtime_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"workingtimes",
+								"{{workingtime_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Working Time",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/workingtimes/{{workingtime_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"workingtimes",
+								"{{workingtime_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Clocks",
+			"item": [
+				{
+					"name": "List Clocks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/clocks/all",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"clocks",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Clock",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/clocks/{{clock_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"clocks",
+								"{{clock_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Clock",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url}}/api/clocks/{{user_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"clocks",
+								"{{user_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Working Times",
+			"item": [
+				{
+					"name": "Create Working time",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"working_time\": {\n        \"start\": \"2020-05-11 09:00:00\",\n        \"end\": \"2020-05-11 19:00:00\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/workingtimes/7",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"workingtimes",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Working Time",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/workingtimes/all",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"workingtimes",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Working Time By Param",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/workingtimes/{{user_id}}?start=2020-04-02T14:00:00&end=2020-04-14T02:21:56",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"workingtimes",
+								"{{user_id}}"
+							],
+							"query": [
+								{
+									"key": "start",
+									"value": "2020-04-02T14:00:00"
+								},
+								{
+									"key": "end",
+									"value": "2020-04-14T02:21:56"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Working Time",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/workingtimes/1/{{workingtime_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"workingtimes",
+								"1",
+								"{{workingtime_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Working Time",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"working_time\": {\n        \"start\": \"2020-05-11 09:00:00\",\n        \"end\": \"2020-05-11 19:00:00\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/workingtimes/13",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"workingtimes",
+								"13"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Working Time",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/workingtimes/13",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"workingtimes",
+								"13"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

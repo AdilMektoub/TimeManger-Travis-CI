@@ -1,0 +1,14 @@
+# étape de build
+FROM node:lts
+
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 8080
+#ATTENTION installer vue notification "npm install --save vue-notification"
+CMD ["npm", "run", "serve"]
